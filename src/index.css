@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500;700&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: Raleway, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+header {
+  padding: 30px;
+  text-align: right;
+  margin: 0 60px;
+
+  >button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+    color: #4F4F4F;
+  }
+}
+
+main {
+  min-height: calc(100vh - 147px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .quote-wrapper {
+    width: 50%;
+
+    .quote {
+      font-size: 36px;
+      position: relative;
+      margin-bottom: 110px;
+
+      >p:before {
+        content: "";
+        position: absolute;
+        left: -100px;
+        top: 0;
+        height: 100%;
+        width: 8px;
+        background-color: #F7DF94;
+      }
+    }
+
+    .author {
+      padding: 50px 30px;
+      cursor: pointer;
+      transition: all 0.4s;
+      position: relative;
+
+      >h1 {
+        transition: all 0.4s;
+        font-size: 24px;
+        color: #4F4F4F;
+        margin-bottom: 8px;
+      }
+
+      >h2 {
+        color: #828282;
+        font-size: 14px;
+      }
+
+      &:hover {
+        background-color: #333333;
+
+        >h1 {
+          color: white;
+        }
+
+        &::after {
+          content: "\2192";
+          position: absolute;
+          right: 30px;
+          color: white;
+          font-size: 36px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+}
+
+footer {
+  padding: 24px;
+  text-align: center;
+  color: #828282;
+  font-size: 14px;
+}
+
+.author-title {
+  width: 50%;
+  margin: 0 auto 140px;
+}
+
+@media screen and (width <=768px) {
+  header {
+    text-align: center;
+  }
+
+  .author-title {
+    width: 80%;
+    text-align: center;
+  }
+
+  main {
+    .quote-wrapper {
+      width: 80%;
+
+      .quote {
+        font-size: 24px;
+
+        >p:before {
+          content: "";
+          left: -14px;
+          width: 4px;
+        }
+      }
+    }
+  }
+}
